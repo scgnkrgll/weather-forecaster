@@ -59,5 +59,6 @@ export interface WeatherbitErrorResponse {
 }
 
 export interface WeatherbitQuery {
+  days: string
   city: string
 }

@@ -10,8 +10,10 @@ const WeatherCard: FC<{
   return (
     <div className={styles.weatherCard}>
       <div className={styles.temp}>{data.temp}°C</div>
-      <div className={styles.city}>{cityName}</div>
-      <div className={styles.date}>{formatDate(data.datetime)}</div>
+      <div className="d-flex flex-column align-items-center">
+        <div className={styles.city}>{cityName}</div>
+        <div className={styles.date}>{formatDate(data.datetime)}</div>
+      </div>
       <div className={styles.description}>
         <img className={styles.icon} src={`/icons/${data.weather.icon}.png`} alt={data.weather.description} />
         <span>{data.weather.description}</span>

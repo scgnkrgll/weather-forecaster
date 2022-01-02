@@ -51,6 +51,9 @@ const WeatherChart: FC<{
     title: {
       text: `Average High & Low Temperature for ${cityName}`,
       align: "center",
+      style: {
+        fontWeight: "normal",
+      },
     },
     grid: {
       borderColor: "#e7e7e7",
@@ -64,13 +67,13 @@ const WeatherChart: FC<{
     },
     xaxis: {
       categories,
-      title: {
-        text: "Month",
-      },
     },
     yaxis: {
       title: {
         text: "Temperature",
+        style: {
+          fontWeight: "normal",
+        },
       },
     },
     legend: {
