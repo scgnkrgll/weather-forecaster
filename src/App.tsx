@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import useWetherbit from "./hooks/useWeatherbit"
+import Navbar from "./components/Navbar"
+import SearchInput from "./components/SearchInput"
+import Layout from "./components/Layout"
+import WeatherCard from "./components/WeatherCard"
 
 function App() {
+  const [city, setCity] = useState("")
+
+  const { isLoading, data, error } = useWetherbit({
+    city,
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+
+      <Layout>
+        <SearchInput className="mt-large" placeHolder="Search City" onChange={(e) => setCity(e.target.value)} />
+        <div className="mt-large d-flex justify-content-center align-items-center min-container-height flex-column">
+          {!city ? (
+            <>
+              <h1>No city is selected!</h1>
+              <p>Type any city name to get weekly forecast data</p>
+            </>
+          ) : isLoading ? (
+            <div>Loading...</div>
+          ) : error ? (
+            <div>Something went wrong {error?.error && error.error}</div>
+          ) : data && Object.keys(data).length > 0 ? (
+            <>
+              <WeatherCard data={data!.data[0]} cityName={data.city_name} />
+            </>
+          ) : (
+            <div>"City doesn’t exist!"</div>
+          )}
+        </div>
+      </Layout>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
