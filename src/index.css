@@ -39,3 +39,7 @@ input {
 .min-container-height {
   min-height: 500px;
 }
+
+#chart {
+  width: 1000px;
+}
