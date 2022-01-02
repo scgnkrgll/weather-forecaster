@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: calc(100vh - var(--nav-height));
+  width: calc(100% - 2 * var(--gutter-width));
+  min-height: calc(100vh - var(--nav-height) - var(--gutter-width));
+  padding: 0 var(--gutter-width);
+  padding-bottom: var(--gutter-width);
 }

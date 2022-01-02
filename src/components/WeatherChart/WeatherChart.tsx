@@ -11,7 +11,6 @@ const WeatherChart: FC<{
 }> = ({ series, cityName, categories, onMarkerClick }) => {
   const [options] = useState<ApexOptions>({
     chart: {
-      height: 350,
       type: "line",
       dropShadow: {
         enabled: true,
@@ -87,7 +86,7 @@ const WeatherChart: FC<{
 
   return (
     <div className={styles.chart}>
-      <ReactApexChart options={options} series={series} type="line" height={350} />
+      <ReactApexChart options={options} series={series} type="line" width={"100%"} height={350} />
     </div>
   )
 }

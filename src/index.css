@@ -2,6 +2,7 @@
   --nav-text-color: #ffffff;
   --nav-bg-color: #545454;
   --nav-height: 80px;
+  --gutter-width: 20px;
   --body-text-color: #545454;
   --primary-color: #77b6ea;
   --warning-color: #cd7b7b;
@@ -41,7 +42,6 @@ input {
 .min-container-height {
   min-height: 500px;
 }
-
-#chart {
-  width: 1000px;
+.flex-wrap {
+  flex-wrap: wrap;
 }

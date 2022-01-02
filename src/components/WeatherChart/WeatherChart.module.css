@@ -1,4 +1,12 @@
 .chart {
-  width: 700px;
-  margin-right: 72px;
+  width: 100vw;
+  margin-bottom: var(--gutter-width);
+}
+
+@media screen and (min-width: 1200px) {
+  .chart {
+    width: 700px;
+    margin-right: 72px;
+    margin-bottom: 0;
+  }
 }

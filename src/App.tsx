@@ -31,7 +31,7 @@ function App() {
           ) : error ? (
             <div>Something went wrong {error?.error && error.error}</div>
           ) : data && Object.keys(data).length > 0 ? (
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center justify-content-center flex-wrap content">
               <WeatherChart
                 series={[
                   {

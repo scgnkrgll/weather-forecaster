@@ -1,6 +1,7 @@
 .title {
   font-size: 2rem;
   line-height: 1.5;
+  text-align: center;
 }
 .success {
   color: var(--primary-color);
@@ -15,4 +16,5 @@
 .message {
   font-size: 1.5rem;
   line-height: 1.5;
+  text-align: center;
 }
